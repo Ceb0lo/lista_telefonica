@@ -4,6 +4,7 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 32px;
 `
 export const Busca = styled.input`
   padding: 8px;
@@ -13,14 +14,12 @@ export const Busca = styled.input`
   width: 50%;
 `
 export const NovoContato = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  background-color: #44bd32;
+  font-wight: bold;
+  font-size: 17px;
   color: #fff;
-  height: 35px;
-  width: 100px;
-  border-radius: 8%;
+  padding: 8px 12px;
+  color: #fff;
+  background-color: #27ae60;
+  border-radius: 8px;
   text-decoration: none;
 `
