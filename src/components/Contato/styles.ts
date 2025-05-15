@@ -1,3 +1,4 @@
+import InputMask from 'react-input-mask'
 import { styled } from 'styled-components'
 
 export const Card = styled.div`
@@ -19,6 +20,13 @@ export const Campo = styled.input`
   background-color: transparent;
   margin-bottom: 8px;
 `
+export const CampoTelefone = styled(InputMask)`
+  font-size: 18px;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 8px;
+`
+
 export const BarraInferior = styled.div`
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 16px;

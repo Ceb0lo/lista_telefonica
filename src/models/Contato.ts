@@ -1,13 +1,18 @@
 class Contato {
   nome: string
-  numero: number
-  email: string
+  numeroDoContato: number
+  emailDoContato: string
   id: number
 
-  constructor(nome: string, numero: number, email: string, id: number) {
+  constructor(
+    nome: string,
+    numeroDoContato: number,
+    emailDoContato: string,
+    id: number
+  ) {
     this.nome = nome
-    this.numero = numero
-    this.email = email
+    this.numeroDoContato = numeroDoContato
+    this.emailDoContato = emailDoContato
     this.id = id
   }
 }
