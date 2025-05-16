@@ -1,10 +1,14 @@
-import Contato from '../../components/Contato'
 import Cabecalho from '../../containers/Cabecalho'
+import Lista from '../../containers/Lista'
 
 const Home = () => (
   <>
     <Cabecalho />
-    <Contato />
+    <ul>
+      <li>
+        <Lista />
+      </li>
+    </ul>
   </>
 )
 

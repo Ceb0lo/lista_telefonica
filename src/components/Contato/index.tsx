@@ -18,31 +18,64 @@ const Contato = ({
   const [numeroDoContato, setNumeroDoContato] = useState('')
   const [emailDoContato, setEmailDoContato] = useState('')
 
+  const numeroString = numeroOriginal.toString()
+
   useEffect(() => {
     if (emailOriginal.length > 0 && numeroOriginal > 0) {
-      setNumeroDoContato(numeroOriginal)
+      setNumeroDoContato(numeroString)
       setEmailDoContato(emailOriginal)
     }
   }, [emailOriginal, numeroOriginal])
 
   function cancelaEdicao() {
     setEstaEditando(false)
-    setNumeroDoContato(numeroOriginal)
+    setNumeroDoContato(numeroString)
     setEmailDoContato(emailOriginal)
   }
 
   return (
     <S.Card>
-      <S.Nome>{nome}</S.Nome>
+      <S.Nome>
+        {estaEditando && <em>Editando: </em>}
+        {nome}
+      </S.Nome>
       <S.CampoTelefone
+        disabled={!estaEditando}
         mask="99 99999-9999"
-        value={numeroDoContato.toString()}
+        value={numeroDoContato}
         onChange={(e) => setNumeroDoContato(e.target.value)}
       />
-      <S.Campo type="email" value={emailDoContato} />
+      <S.Campo
+        value={emailDoContato}
+        disabled={!estaEditando}
+        onChange={(e) => setEmailDoContato(e.target.value)}
+      />
       <S.BarraInferior>
-        <Botao>Edidar</Botao>
-        <Botao>Remover</Botao>
+        {estaEditando ? (
+          <>
+            <Botao
+              onClick={() => {
+                dispatch(
+                  editar({
+                    nome,
+                    numeroDoContato: Number(numeroDoContato),
+                    emailDoContato,
+                    id
+                  })
+                )
+                setEstaEditando(false)
+              }}
+            >
+              Salvar
+            </Botao>
+            <Botao onClick={cancelaEdicao}>Cancelar</Botao>
+          </>
+        ) : (
+          <>
+            <Botao onClick={() => setEstaEditando(true)}>Edidar</Botao>
+            <Botao onClick={() => dispatch(remover(id))}>Remover</Botao>
+          </>
+        )}
       </S.BarraInferior>
     </S.Card>
   )
