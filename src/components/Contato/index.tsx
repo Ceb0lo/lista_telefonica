@@ -25,7 +25,7 @@ const Contato = ({
       setNumeroDoContato(numeroString)
       setEmailDoContato(emailOriginal)
     }
-  }, [emailOriginal, numeroOriginal])
+  }, [emailOriginal, numeroOriginal, numeroString])
 
   function cancelaEdicao() {
     setEstaEditando(false)
