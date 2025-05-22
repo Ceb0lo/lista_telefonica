@@ -1,6 +1,10 @@
+import AddContato from '../../containers/AddContato'
+import Cabecalho from '../../containers/Cabecalho'
+
 const Cadastro = () => (
   <>
-    <h1>ola</h1>
+    <Cabecalho alteraBotao={false} />
+    <AddContato />
   </>
 )
 

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Header = styled.header`
@@ -13,7 +14,7 @@ export const Busca = styled.input`
   font-weight: bold;
   width: 50%;
 `
-export const NovoContato = styled.a`
+export const NovoContato = styled(Link)`
   font-wight: bold;
   font-size: 17px;
   color: #fff;

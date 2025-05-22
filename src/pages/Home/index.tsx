@@ -3,7 +3,7 @@ import Lista from '../../containers/Lista'
 
 const Home = () => (
   <>
-    <Cabecalho />
+    <Cabecalho alteraBotao />
     <Lista />
   </>
 )
