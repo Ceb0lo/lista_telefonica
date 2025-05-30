@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import variaveis from '../../styles/variaveis'
 
 export const Header = styled.header`
   display: flex;
@@ -20,7 +21,7 @@ export const NovoContato = styled(Link)`
   color: #fff;
   padding: 8px 12px;
   color: #fff;
-  background-color: #27ae60;
+  background-color: ${variaveis.verdeBrilhante};
   border-radius: 8px;
   text-decoration: none;
 `

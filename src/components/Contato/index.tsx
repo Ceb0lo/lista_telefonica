@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import ContatoClass from '../../models/Contato'
 import { remover, editar } from '../../store/reducers/contato'
 import * as S from './styles'
-import { Botao } from '../../styles'
 
 type Props = ContatoClass
 
@@ -53,7 +52,7 @@ const Contato = ({
       <S.BarraInferior>
         {estaEditando ? (
           <>
-            <Botao
+            <S.BotaoVerde
               onClick={() => {
                 dispatch(
                   editar({
@@ -67,13 +66,17 @@ const Contato = ({
               }}
             >
               Salvar
-            </Botao>
-            <Botao onClick={cancelaEdicao}>Cancelar</Botao>
+            </S.BotaoVerde>
+            <S.BotaoVermelho onClick={cancelaEdicao}>Cancelar</S.BotaoVermelho>
           </>
         ) : (
           <>
-            <Botao onClick={() => setEstaEditando(true)}>Edidar</Botao>
-            <Botao onClick={() => dispatch(remover(id))}>Remover</Botao>
+            <S.BotaoAzul onClick={() => setEstaEditando(true)}>
+              Edidar
+            </S.BotaoAzul>
+            <S.BotaoVermelho onClick={() => dispatch(remover(id))}>
+              Remover
+            </S.BotaoVermelho>
           </>
         )}
       </S.BarraInferior>
